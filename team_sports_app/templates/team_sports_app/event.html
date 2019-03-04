@@ -2,8 +2,10 @@
 
 {% block content %}
 
-  <p>Event: {{ Event }}</p>
-  
+<div class="page-header">
+  <h3>Events<small> below are events you are able to join!</small>{{ Event }}</h3>
+</div>
+
   <p>Participants:</p>
   <ul>
   {% for participant in participants %}
@@ -17,7 +19,6 @@
     </li>
   {% endfor %}
   </ul>
-  <button name="Join">join event</button>
+    <button type="button" class="btn btn-success" name="Join">Join event</button>
 
 {% endblock content %}
-
