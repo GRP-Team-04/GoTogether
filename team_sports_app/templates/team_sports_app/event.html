@@ -1,24 +1,31 @@
 {% extends 'team_sports_app/base.html' %}
 
 {% block content %}
-
 <div class="page-header">
-  <h3>Events<small> below are events you are able to join!</small>{{ Event }}</h3>
+  <h3>Events{{ Event }}</h3>
 </div>
-
   <p>Participants:</p>
-  <ul>
-  {% for participant in participants %}
-    <li>
-      <p>{{ participant.date_added|date:'M d, Y H:i' }}</p>
-      <p>{{ participant.text|linebreaks }}</p>
-    <li>
+{% for participant in participants %}
+  <table class = "table">
+    <thead>
+      <tr>
+        <th>When</th>
+        <th>Content</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ participant.date_added|date:'M d, Y H:i' }}</td>
+        <td>{{ participant.text|linebreaks }}</td>
+      </tr>
+    </tbody>
+  </table>
   {% empty %}
-    <li>
-      There are no participants for this event now
-    </li>
+    <p>There are no participants for this event now!</p>
   {% endfor %}
-  </ul>
-    <button type="button" class="btn btn-success" name="Join">Join event</button>
+  <button type="button" class="btn btn-primary" name="Join">Join event</button>
 
+
+
+</div>
 {% endblock content %}

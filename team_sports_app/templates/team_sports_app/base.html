@@ -15,7 +15,7 @@
 <body>
 
 <nav class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">
+  <div class="container">
     <div class="navbar-header">
       <a class="navbar-brand" href="{% url 'team_sports_app:index' %}">GoTogether</a>
     </div>
@@ -31,6 +31,8 @@
   </div>
 </nav>
 
+<div class="container">
 {% block content %}{% endblock content %}
+</div>
 </body>
 </html>
