@@ -1,0 +1,23 @@
+{% extends 'team_sports_app/base.html' %}
+
+{% block content %}
+
+  <p>Event: {{ Event }}</p>
+  
+  <p>Participants:</p>
+  <ul>
+  {% for participant in participants %}
+    <li>
+      <p>{{ participant.date_added|date:'M d, Y H:i' }}</p>
+      <p>{{ participant.text|linebreaks }}</p>
+    <li>
+  {% empty %}
+    <li>
+      There are no participants for this event now
+    </li>
+  {% endfor %}
+  </ul>
+  <button name="Join">join event</button>
+
+{% endblock content %}
+
