@@ -6,6 +6,4 @@ class EventForm(forms.ModelForm):
         model = Event
         fields = ['Event_name','Event_time','Event_venue','Max_players','Players_registratered','Description']
         labels = {'Event_name':'Event_name','Event_time':'Event_time','Event_venue':'Event_venue','Max_players':'Max_players','Players_registratered':'Players_registratered','Description':'Description'}
-
-
-
+	
